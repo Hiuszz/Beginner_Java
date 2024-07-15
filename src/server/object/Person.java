@@ -1,4 +1,5 @@
-import java.text.ParseException;
+package server.object;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -84,5 +85,19 @@ public class Person {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         String date = formatter.format(this.dob);
         return this.idCard + "," + this.name + "," + this.gender + "," + date + "," + this.address + "," + this.tel;
+    }
+
+    public static Person fromString(String str) {
+        String[] parts = str.split(",");
+        if (parts.length < 6) {
+            throw new IllegalArgumentException("Invalid person data: " + str);
+        }
+        int idCard = Integer.parseInt(parts[0]);
+        String name = parts[1];
+        String gender = parts[2];
+        String dob = parts[3];
+        String address = parts[4];
+        int tel = Integer.parseInt(parts[5]);
+        return new Person(idCard,name,gender,dob,address,tel);
     }
 }

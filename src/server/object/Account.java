@@ -1,19 +1,14 @@
-public class Account {
+package server.object;
+import shared.object.*;
+
+
+ public class Account {
     private int idAcc;
     private int tel;
     private String password;
     private Customer customer;
 
     public Account() {
-    }
-
-    public Account(String name, int tel, String password) {
-        Customer c = new Basic(name, 0);
-        this.idAcc = Server.getLastAcc();
-        Server.setLastAcc(Server.getLastAcc() + 1);
-        this.tel = tel;
-        this.password = password;
-        this.customer = c;
     }
 
     public Account(int idAcc, String name, int tel, String password) {

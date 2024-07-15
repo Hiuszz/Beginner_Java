@@ -1,4 +1,6 @@
-public class VIP extends Customer{
+package shared.object;
+
+public class VIP extends Customer {
     private double rate;
     private int level;
     public VIP(String name, double total, double rate, int level){

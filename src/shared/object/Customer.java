@@ -1,4 +1,6 @@
-abstract class Customer {
+package shared.object;
+
+public abstract class Customer {
     private String name;
     private double total;
     abstract String info();
